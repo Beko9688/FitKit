@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container m-5">
+	<div class="row justify-content-center">
+		<div class="col-6 d-flex justify-content-center">
+			<form class="form-control" method="get">
+				<div class="form-group">
+                <label class="my-2" for="formGroupExampleInput">URL</label>
+                <input type="text" name="text" class="form-control" id="formGroupExampleInput" placeholder="here...">
+				<input class="my-2" type="submit" value="Submit">
+                </div>
+			</form>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-6 d-flex justify-content-center">
+				{{message}}
+			</div>
+		</div>
+	</div>
+
+	<div class="row justify-content-center">
+	<div class="col-8">
+	{% for info in list_info %}
+	<ul class="list-group my-5">
+		<li align=center class="list-group-item"><img src="{{info.imageUrl}}" style="width:200px"></li>
+        <li class="list-group-item">id: <b>{{info.id}}</b></li>
+		<li class="list-group-item">name: <b>{{info.name}}</b></li>
+        <li class="list-group-item">last name: <b>{{info.last_name}}</b></li>
+		<li class="list-group-item">phone: <b>{{info.phone}}</b></li>
+   </ul>
+	{% endfor %}
+	</div>
+
+</div>
+
+</body>
+</html>
